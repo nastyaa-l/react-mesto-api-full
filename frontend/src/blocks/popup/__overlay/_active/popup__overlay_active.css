@@ -1,0 +1,6 @@
+.popup__overlay_active{
+  pointer-events: all;
+  display: flex;
+  opacity:1;
+  visibility:visible;
+}

@@ -1,0 +1,7 @@
+.popup__content_register{
+  padding: 0;
+  width: 430px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}

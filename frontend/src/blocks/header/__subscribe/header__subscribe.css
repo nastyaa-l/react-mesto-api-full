@@ -1,0 +1,14 @@
+.header__subscribe {
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 22px;
+  color: #FFFFFF;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+.header__subscribe:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}

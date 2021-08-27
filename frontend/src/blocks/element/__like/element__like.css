@@ -1,0 +1,28 @@
+.element__like{
+   min-width: 21px;
+   min-height: 19px;
+   background-image: url(../../../image/VectorLike.svg);
+   border: none;
+   background-color: #FFFFFF;
+   opacity: 1;
+   padding:0;
+   color: #FFFFFF;
+   transition: opacity linear;
+ }
+
+ .element__like:focus{
+   outline: none;
+ }
+
+ .element__like:hover{
+   opacity:0.5;
+   cursor: pointer;
+   border:none;
+ }
+
+ .element__like:active{
+  background-image: url(../../../image/blackLike.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  border:none;
+ }

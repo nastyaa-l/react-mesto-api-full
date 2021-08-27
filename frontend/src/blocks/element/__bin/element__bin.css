@@ -1,0 +1,23 @@
+.element__bin{
+  position: absolute;
+  background-image: url(../../../image/del.svg);
+  background-color: transparent;
+  border: none;
+  padding:0;
+  height: 19.3px;
+  width: 18px;
+  right: 15px;
+  top: 18px;
+  opacity: 1;
+  transition: opacity, linear;
+  display: none;
+}
+
+.element__bin:focus {
+   outline: none;
+ }
+
+.element__bin:hover{
+  opacity:0.6;
+  cursor: pointer;
+}

@@ -1,0 +1,21 @@
+
+.profile__subscription{
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 1.22;
+  color: #FFFFFF;
+  margin: 16px 0 0;
+  grid-area: subscribe;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 768px){
+  .profile__subscription{
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    margin-top:14px;
+  }
+}

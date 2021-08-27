@@ -1,0 +1,18 @@
+.element__picture{
+  height: 282px;
+  width: 282px;
+  object-fit: cover;
+  object-position: 0 0;
+  border-radius: 10px 10px 0px 0px;
+}
+
+.element__picture:hover{
+  cursor: pointer;
+}
+
+.element__picture_active{
+  align-items: center;
+  justify-content: center;
+  max-width: 75vw;
+  max-height: 75vh;
+}

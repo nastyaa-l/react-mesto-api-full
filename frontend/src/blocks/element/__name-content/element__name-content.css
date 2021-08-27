@@ -1,0 +1,6 @@
+.element__name-content{
+  display: flex;
+  margin: 25px 15px calc(362px - 25px - 282px - 28.8px - 4px) 21px;
+  justify-content: space-between;
+  align-items: flex-start;
+}
