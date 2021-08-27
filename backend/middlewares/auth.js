@@ -5,7 +5,9 @@ const Auth = require('../errors/AuthError');
 const extractBearerToken = (header) => header.replace('Bearer ', '');
 
 const auth = (req, res, next) => {
-  const { JWT_SECRET = 'dev-key' } = process.env;
+  const JWT_SECRET = process.env.NODE_ENV !== 'production'
+    ? 'dev-key'
+    : process.env.JWT_SECRET;
   const { authorization } = req.headers;
 
   if (!authorization || !authorization.startsWith('Bearer ')) {
