@@ -28,8 +28,8 @@ const limiter = rateLimit({
   max: 50,
 });
 
-app.use(express.json());
 app.use(cors());
+app.use(express.json());
 app.use(helmet());
 app.use(limiter);
 app.use(cookieParser());

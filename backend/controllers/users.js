@@ -85,9 +85,7 @@ const login = (req, res, next) => {
   const { email, password } = req.body;
   return User.findUserByCredentials(email, password)
     .then((user) => {
-      const JWT_SECRET = process.env.NODE_ENV !== 'production'
-        ? 'dev-key'
-        : process.env.JWT_SECRET;
+      const { JWT_SECRET = 'dev-key' } = process.env;
       const token = jwt.sign({ _id: user._id }, JWT_SECRET, { expiresIn: '7d' });
       res.cookie('jwt', token, {
         maxAge: 3600000 * 24 * 7,
