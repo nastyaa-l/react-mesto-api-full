@@ -28,7 +28,16 @@ const limiter = rateLimit({
   max: 50,
 });
 
-app.use(cors());
+app.use(
+  cors({
+    origin: [
+      'http://localhost:3000',
+      'http://domainname.nastyaa-l.nomoredomains.monsterr',
+      'https://backend-domainname-nastya.nomoredomains.monster',
+    ],
+    credentials: true,
+  }),
+);
 app.use(express.json());
 app.use(helmet());
 app.use(limiter);
