@@ -11,6 +11,7 @@ const { createUser, login } = require('./controllers/users');
 const auth = require('./middlewares/auth');
 const NotFoundError = require('./errors/NotFoundError');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
+const mycors = require('./middlewares/cors');
 
 const app = express();
 
@@ -32,12 +33,13 @@ app.use(
   cors({
     origin: [
       'http://localhost:3000',
-      'http://domainname.nastyaa-l.nomoredomains.monsterr',
+      'http://domainname.nastyaa-l.nomoredomains.monster',
       'https://backend-domainname-nastya.nomoredomains.monster',
     ],
     credentials: true,
   }),
 );
+app.use(mycors);
 app.use(express.json());
 app.use(helmet());
 app.use(limiter);
