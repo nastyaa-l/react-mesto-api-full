@@ -2,4 +2,5 @@
 Репозиторий для приложения проекта `Mesto`, включающий фронтенд и бэкенд части приложения со следующими возможностями: авторизации и регистрации пользователей, операции с карточками и пользователями. Бэкенд расположите в директории `backend/`, а фронтенд - в `frontend/`. 
   
 Публичный IP 178.154.198.113
-Домен domainname.nastyaa-l.nomoredomains.monster
+Доменное имя фронтенд: domainname.nastyaa-l.nomoredomains.monster
+Доменное имя бэкенд: backend-domainname-nastya.nomoredomains.monster

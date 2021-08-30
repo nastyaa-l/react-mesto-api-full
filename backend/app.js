@@ -4,6 +4,7 @@ const { celebrate, Joi } = require('celebrate');
 const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
 const cookieParser = require('cookie-parser');
+const cors = require('cors');
 const usersRouter = require('./routes/users');
 const cardsRouter = require('./routes/cards');
 const { createUser, login } = require('./controllers/users');
@@ -28,6 +29,7 @@ const limiter = rateLimit({
 });
 
 app.use(express.json());
+app.use(cors());
 app.use(helmet());
 app.use(limiter);
 app.use(cookieParser());
@@ -42,7 +44,7 @@ app.get('/crash-test', () => {
 
 app.post('/signin', celebrate({
   body: Joi.object().keys({
-    email: Joi.string().email(),
+    email: Joi.string().required().email(),
     password: Joi.string().required().min(8),
   }),
 }), login);
@@ -51,8 +53,8 @@ app.post('/signup', celebrate({
   body: Joi.object().keys({
     email: Joi.string().required().email(),
     password: Joi.string().required().min(6),
-    name: Joi.string(),
-    about: Joi.string(),
+    name: Joi.string().min(2).max(30),
+    about: Joi.string().min(2).max(30),
     avatar: Joi.string().regex(/^https?:\/\/(www\.)?[a-zA-Z0-9-.]+\.[a-z]{2,}\/[\S]+\.(png|jpg)/),
   }),
 }), createUser);
