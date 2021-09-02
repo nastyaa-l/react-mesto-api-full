@@ -1,4 +1,4 @@
-export const BASE_URL = "http://178.154.198.113/api";
+export const BASE_URL = "http://84.201.141.163/api";
 
 export class Auth {
 
