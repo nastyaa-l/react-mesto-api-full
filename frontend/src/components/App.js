@@ -142,11 +142,11 @@ function App() {
   }
 
   function moveToRegister() {
-    history.push('/sign-up');
+    history.push('/signup');
   }
 
   function moveToLogin() {
-    history.push('/sign-in');
+    history.push('/signin');
   }
 
 
