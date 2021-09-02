@@ -49,7 +49,7 @@ function Register(props) {
             />
       <span className="form__input-error"></span>
           <button type="submit" className="form__submit form__submit_password">Зарегестрироваться</button>
-          <Link to="sign-in" className="form__text">Уже зарегистрированы? Войти</Link>
+          <Link to="signin" className="form__text">Уже зарегистрированы? Войти</Link>
         </form>
         </div>
 
