@@ -10,6 +10,7 @@ const { createUser, login } = require('./controllers/users');
 const auth = require('./middlewares/auth');
 const NotFoundError = require('./errors/NotFoundError');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
+const myCors = require('./middlewares/cors');
 
 const { PORT = 3000 } = process.env;
 const app = express();
@@ -31,6 +32,8 @@ const allowedCors = [
 app.use(cors({
   origin: allowedCors,
 }));
+
+app.use(myCors());
 
 app.use((req, res, next) => {
   const { origin } = req.headers;
