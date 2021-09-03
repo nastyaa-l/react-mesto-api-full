@@ -9,7 +9,7 @@ const auth = (req, res, next) => {
   const { authorization } = req.headers;
 
   if (!authorization || !authorization.startsWith('Bearer ')) {
-    throw new Auth('Необходима авторизация');
+    throw new Auth('Необходима авторизация:', authorization);
   }
 
   const token = extractBearerToken(authorization);
@@ -18,7 +18,7 @@ const auth = (req, res, next) => {
   try {
     payload = jwt.verify(token, JWT_SECRET);
   } catch (err) {
-    throw new Auth('Необходима авторизация');
+    throw new Auth('Необходима авторизация:', payload);
   }
 
   req.user = payload;

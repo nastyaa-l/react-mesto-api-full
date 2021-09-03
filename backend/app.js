@@ -34,7 +34,8 @@ app.use(
     origin: [
       'http://localhost:3000',
       'http://domainname.nastyaa-l.nomoredomains.monster',
-      'https://backend-domainname-nastya.nomoredomains.monster',
+      'http://backend-domainname-nastya.nomoredomains.monster',
+      'http://84.201.141.163/',
     ],
     credentials: true,
   }),
@@ -70,10 +71,8 @@ app.post('/signup', celebrate({
   }),
 }), createUser);
 
-app.use(auth);
-
-app.use('/', usersRouter);
-app.use('/', cardsRouter);
+app.use('/api/users', auth, usersRouter);
+app.use('/api/cards', auth, cardsRouter);
 
 app.use(() => {
   throw new NotFoundError('Запрашиваемый ресурс не найден');

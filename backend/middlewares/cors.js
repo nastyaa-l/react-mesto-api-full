@@ -4,6 +4,7 @@ const allowedCors = [
   'http://domainname.nastyaa-l.nomoredomains.monster',
   'https://backend-domainname-nastya.nomoredomains.monster',
   'http://localhost:3000',
+  'http://84.201.141.163/',
 ];
 
 // eslint-disable-next-line consistent-return
