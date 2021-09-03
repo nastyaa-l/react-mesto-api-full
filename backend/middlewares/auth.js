@@ -1,22 +1,22 @@
 /* eslint-disable consistent-return */
+require('dotenv').config();
 const jwt = require('jsonwebtoken');
 const Auth = require('../errors/AuthError');
 
-const extractBearerToken = (header) => header.replace('Bearer ', '');
+const { NODE_ENV, JWT_SECRET } = process.env;
 
 const auth = (req, res, next) => {
-  const { JWT_SECRET = 'dev-key' } = process.env;
   const { authorization } = req.headers;
 
   if (!authorization || !authorization.startsWith('Bearer ')) {
     throw new Auth('Необходима авторизация:', authorization);
   }
 
-  const token = extractBearerToken(authorization);
+  const token = authorization.replace('Bearer ', '');
   let payload;
 
   try {
-    payload = jwt.verify(token, JWT_SECRET);
+    payload = jwt.verify(token, NODE_ENV === 'production' ? JWT_SECRET : 'dev-secret');
   } catch (err) {
     throw new Auth('Необходима авторизация:', payload);
   }
