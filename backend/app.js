@@ -71,12 +71,10 @@ app.post('/signup', celebrate({
   }),
 }), createUser);
 
-app.use(auth);
+app.use('/', auth, usersRouter);
+app.use('/', auth, cardsRouter);
 
-app.use('/', usersRouter);
-app.use('/', cardsRouter);
-
-app.use(() => {
+app.use('*', () => {
   throw new NotFoundError('Запрашиваемый ресурс не найден');
 });
 
