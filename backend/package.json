@@ -2,7 +2,7 @@
   "name": "express",
   "version": "1.0.0",
   "description": "Project 13 sprint",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
     "dev": "nodemon app.js",
     "start": "node app.js",
@@ -15,8 +15,6 @@
     "bcryptjs": "^2.4.3",
     "celebrate": "^15.0.0",
     "cookie-parser": "^1.4.5",
-    "cors": "^2.8.5",
-    "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "express-rate-limit": "^5.3.0",
     "express-winston": "^4.1.0",

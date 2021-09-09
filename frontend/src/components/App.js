@@ -142,11 +142,11 @@ function App() {
   }
 
   function moveToRegister() {
-    history.push('/signup');
+    history.push('/sign-up');
   }
 
   function moveToLogin() {
-    history.push('/signin');
+    history.push('/sign-in');
   }
 
 
@@ -214,11 +214,11 @@ function App() {
     <div className="page">
       <CurrentUserContext.Provider value={currentUser}>
       <Switch>
-        <Route path="/signup">
+        <Route path="/sign-up">
           <Header text={"Войти"} onClick={moveToLogin}></Header>
           <Register register={handleRegister} />
         </Route>
-        <Route path="/signin">
+        <Route path="/sign-in">
         <Header text={"Регистрация"} onClick={moveToRegister}></Header>
         <Login login={handleLogin} />
         </Route>
@@ -243,7 +243,7 @@ function App() {
               </section>
               </ProtectedRoute>
 
-        <Route> { loggedIn ? <Redirect to ="/" /> : <Redirect to ="/signup" /> }</ Route>
+        <Route> { loggedIn ? <Redirect to ="/" /> : <Redirect to ="/sign-up" /> }</ Route>
       </Switch>
       <InfoTooltip isOpen={isInfoTooltipOpen} onClose={closeAllPopups} status={status} />
       <Footer />
