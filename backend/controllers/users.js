@@ -58,9 +58,10 @@ const updateUser = (req, res, next) => {
     .catch((err) => {
       if (err.name === 'ValidationError') {
         throw new BadRequestError(err.message);
+      } else {
+        next(err);
       }
-    })
-    .catch(next);
+    });
 };
 
 const updateUserAvatar = (req, res, next) => {
@@ -74,9 +75,10 @@ const updateUserAvatar = (req, res, next) => {
     .catch((err) => {
       if (err.name === 'ValidationError') {
         throw new BadRequestError(err.message);
+      } else {
+        next(err);
       }
-    })
-    .catch(next);
+    });
 };
 
 const login = (req, res, next) => {
