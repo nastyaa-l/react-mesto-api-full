@@ -94,11 +94,7 @@ const login = (req, res, next) => {
         .send({ message: 'Авторизация прошла успешно!' });
     })
     .catch((err) => {
-      if (err.message === 'IncorrectEmailOrPassword') {
-        next(new AuthError('Неправильная почта или пароль'));
-      } else {
-        next(err);
-      }
+      next(new AuthError(err.message));
     });
 };
 
